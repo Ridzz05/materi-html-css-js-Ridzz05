@@ -16,12 +16,68 @@
       <p>Jl. Merdeka No. 45, Jakarta Pusat</p>
     </header>
 
-    <nav>
-      <a href="#sejarah">Sejarah</a>
-      <a href="#fasilitas">Fasilitas</a>
-      <a href="#guru">Staf Pengajar</a>
-      <a href="#pendaftaran">PPDB</a>
+    <!-- Hamburger Toggle Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <span class="sidebar__title">MENU</span>
+        <button
+          class="sidebar__close"
+          id="sidebarClose"
+          aria-label="Close Menu"
+        >
+          ✕
+        </button>
+      </div>
+      <a href="#sejarah" class="sidebar__link">Sejarah</a>
+      <a href="#fasilitas" class="sidebar__link">Fasilitas</a>
+      <a href="#guru" class="sidebar__link">Staf Pengajar</a>
+      <a href="#pendaftaran" class="sidebar__link">PPDB</a>
     </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburgerBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("sidebarOverlay");
+      const closeBtn = document.getElementById("sidebarClose");
+
+      function openSidebar() {
+        sidebar.classList.add("sidebar--open");
+        overlay.classList.add("sidebar-overlay--visible");
+        hamburger.classList.add("hamburger--active");
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove("sidebar--open");
+        overlay.classList.remove("sidebar-overlay--visible");
+        hamburger.classList.remove("hamburger--active");
+      }
+
+      hamburger.addEventListener("click", function () {
+        if (sidebar.classList.contains("sidebar--open")) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener("click", closeSidebar);
+      closeBtn.addEventListener("click", closeSidebar);
+
+      // Close sidebar when clicking a nav link
+      document.querySelectorAll(".sidebar__link").forEach(function (link) {
+        link.addEventListener("click", closeSidebar);
+      });
+    </script>
 
     <main>
       <section id="sejarah">
@@ -32,7 +88,10 @@
           masyarakat. Kami percaya bahwa setiap anak memiliki potensi unik yang
           harus dikembangkan sejak dini.
         </p>
-        <img src="https://plus.unsplash.com/premium_photo-1682284353484-4e16001c58eb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8U2Nob29sfGVufDB8fDB8fHww" alt="Sejarah Sekolah" />
+        <img
+          src="https://plus.unsplash.com/premium_photo-1682284353484-4e16001c58eb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8U2Nob29sfGVufDB8fDB8fHww"
+          alt="Sejarah Sekolah"
+        />
       </section>
 
       <section id="fasilitas">
