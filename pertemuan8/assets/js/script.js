@@ -90,3 +90,22 @@ const products = [
     gambar: "https://picsum.photos/id/201/400/400"
   }
 ];
+
+function renderProducts() {
+    const productGrid = document.querySelector('.product-grid');
+    let html = '';
+    products.forEach(product => {
+        html += `
+        <div class="product-card">
+            <img src="${product.gambar}" alt="${product.nama}">
+            <h3>${product.nama}</h3>
+            <p class="price">
+                <s>Rp ${product.harga}</s>
+                <b>Rp ${product.diskon}</b>
+            </p>
+            <button>Tambahkan</button>
+        </div>
+        `;
+    });
+    productGrid.innerHTML = html;
+}
