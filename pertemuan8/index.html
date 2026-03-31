@@ -1,111 +1,21 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurniHome - Kenyamanan Rumah Anda</title>
-    <script src="assets/js/script.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Web Storage</title>
 </head>
 <body>
+    <h1 id="demo"></h1>
+    <script>
+        localStorage.setItem("nama", "Ridzz");
+        document.getElementById("demo").innerHTML = localStorage.getItem("nama"); //test comment
 
-    <header>
-        <h1>FurniHome</h1>
-        <p>Pilihan Terbaik untuk Interior Rumah Idaman</p>
-    </header>
+        sessionStorage.setItem("nama", "Ridzz");
+        document.getElementById("demo").innerHTML = sessionStorage.getItem("nama"); //test comment
 
-    <nav>
-        <div class="nav-container">
-            <a href="#ruang-tamu">Ruang Tamu</a> 
-            <a href="#kamar-tidur">Kamar Tidur</a> 
-            <a href="#dapur">Dapur</a> 
-            <a href="#promo">Promo Spesial</a>
-        </div>
-    </nav>
-
-    <main>
-        <h2 class="section-title">Katalog Produk</h2>
-
-        <div class="product-grid">
-            <!-- Produk 1 -->
-            <div class="product-card">
-                <img src="https://picsum.photos/id/1068/400/400" alt="Sofa Minimalis Biru">
-                <h3>Sofa Minimalis Biru</h3>
-                <p class="price"><s>Rp 4.500.000</s> <b>Rp 3.200.000</b></p>
-                <button>Beli Sekarang</button>
-            </div>
-
-            <!-- Produk 2 -->
-            <div class="product-card">
-                <img src="https://picsum.photos/id/445/400/400" alt="Meja Makan Jati">
-                <h3>Meja Makan Jati</h3>
-                <p class="price"><b>Rp 5.800.000</b></p>
-                <button>Beli Sekarang</button>
-            </div>
-
-            <!-- Produk 3 -->
-            <div class="product-card">
-                <img src="https://picsum.photos/id/367/400/400" alt="Rak Buku Oak">
-                <h3>Rak Buku Oak</h3>
-                <p class="price"><b>Rp 1.500.000</b></p>
-                <button>Beli Sekarang</button>
-            </div>
-
-            <!-- Produk 4 -->
-            <div class="product-card">
-                <img src="https://picsum.photos/id/20/400/400" alt="Meja Kerja Ergonomis">
-                <h3>Meja Kerja Ergonomis</h3>
-                <p class="price"><b>Rp 2.100.000</b></p>
-                <button>Beli Sekarang</button>
-            </div>
-
-            <!-- Produk 5 -->
-            <div class="product-card">
-                <img src="https://picsum.photos/id/48/400/400" alt="Lampu Tidur Artistik">
-                <h3>Lampu Tidur Artistik</h3>
-                <p class="price"><b>Rp 450.000</b></p>
-                <button>Beli Sekarang</button>
-            </div>
-
-            <!-- Produk 6 -->
-            <div class="product-card">
-                <img src="https://picsum.photos/id/10/400/400" alt="Kursi Santai Teras">
-                <h3>Kursi Santai Teras</h3>
-                <p class="price"><b>Rp 850.000</b></p>
-                <button>Beli Sekarang</button>
-            </div>
-        </div>
-    </main>
-
-    <section id="promo">
-        <div class="main">
-            <h2>Penawaran Terbatas!</h2>
-            <div class="banner-container">
-                <img src="https://picsum.photos/id/201/1000/300" alt="Banner Promo Furnitur">
-            </div>
-            <p>Dapatkan diskon hingga <strong>50%</strong> untuk pembelian set kamar tidur bulan ini.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-item">
-                <h4>Tentang Kami</h4>
-                <p>FurniHome menyediakan furnitur berkualitas tinggi dengan material pilihan sejak 1995 untuk kenyamanan hunian Anda.</p>
-            </div>
-            <div class="footer-item">
-                <h4>Pengiriman</h4>
-                <p>• Kurir Toko (Gratis Ongkir)<br>• JNE / J&T / TiKi<br>• Estimasi 2-5 Hari Kerja</p>
-            </div>
-            <div class="footer-item">
-                <h4>Ikuti Kami</h4>
-                <p>Instagram: @furnihome<br>Facebook: FurniHome ID<br>Twitter: @furnihome_id</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 FurniHome Indonesia. All rights reserved.</p>
-        </div>
-    </footer>
+        // lihat perbedaan cara kerja keduanya dengan memberi tanda komentar // pada set item
+        // dan membuka tutup browser
+    </script>
 </body>
 </html>
